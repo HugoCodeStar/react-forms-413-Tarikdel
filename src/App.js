@@ -8,16 +8,23 @@ const starterList = ['Bulbasaur', 'Charmander', 'Squirtle']
 const imgList = ['bulbasaur.png', 'charmander.png', 'squirtle.png']
 
 function App() {
-    // Ajoutez la gestion du state ici
-    // Vous devez ajouter des props aux components
+    const [value, setValue] = useState('0');
+
+    function handleChange(event) {
+        setValue(event.target.value);
+    }
+
+
     return (
         <div className="App">
             <header className="App-header">
-                <StarterSelector/>
-                <StarterShower/>
+                <StarterSelector pokLst={starterList} pokFun={handleChange}/>
+                <StarterShower pokImg={imgList} poknum={value}/>
+
             </header>
         </div>
     );
+
 }
 
 export default App;

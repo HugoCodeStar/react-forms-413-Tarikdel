@@ -3,8 +3,10 @@ import React from "react";
 function StarterShower(props){
 
     return (
-        <div>Image ici</div>
-    )
+        <div>
+            <img src = {props.pokImg[props.poknum]}/>
+        </div>
+    );
 }
 
 export default StarterShower;
